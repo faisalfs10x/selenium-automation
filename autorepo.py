@@ -34,7 +34,7 @@ def main():
     browser.find_element_by_xpath("/html/body/div[4]/div/aside[1]/div[2]/div[1]/div/h2/a").click()
     time.sleep(2)
     browser.find_element_by_id('repository_name').send_keys("selenium repo automation")
-    browser.find_element_by_id('repository_description').send_keys("Hi, im using selenium to create this repo in github. Do follow me on github @faisalfs10x")
+    browser.find_element_by_id('repository_description').send_keys("Hi, im using selenium to create this repo in github. Do ping me on github @faisalfs10x")
     browser.find_element_by_id('repository_auto_init').click()
     time.sleep(5)
     browser.find_element_by_xpath("/html/body/div[4]/main/div/form/div[4]/button").click()
