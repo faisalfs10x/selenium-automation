@@ -7,16 +7,18 @@ from selenium.webdriver.firefox.options import Options
 
 def main():
 
+    options = Options()
+    options.headless = True #set to True for headless else False
+    driver = webdriver.Firefox(options=options, executable_path=r'C:\Program Files\geckodriver-v0.29.0-win64\geckodriver.exe')
+
     url = "http://192.168.0.1/html/home.html" 
-    driver = webdriver.Firefox()
+    print ("Headless Firefox Initialized")
     driver.get(url)
     time.sleep(1)
 
-    options = Options()
-    options.headless = False
-
-    username = "router_admin"
-    password = "your_pwd"
+    username = "admin"
+    password = "router_pwd"
+    MAC_add = "your_MAC_address"
 
     # login
     driver.find_element_by_id('logout_span').click()
@@ -32,13 +34,13 @@ def main():
     dropdown = driver.find_element_by_id('ssid_select_service').click()
     # choose Deny
     driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div[2]/div[2]/div[2]/div[1]/div/span[2]/select/option[3]").click()
-    driver.find_element_by_id('ssid_input_WifiMacFilterMac0').send_keys("MAC_ADDRESS_HERE")
+    driver.find_element_by_id('ssid_input_WifiMacFilterMac0').send_keys(MAC_add)
     driver.find_element_by_id('apply').click() 
     driver.find_element_by_id('pop_confirm').click()
     time.sleep(2)
     
     driver.quit()    
-
+    print ("Blacklisted: "+MAC_add)
 #    browser.delete_all_cookies()
 #    browser.close()
             
