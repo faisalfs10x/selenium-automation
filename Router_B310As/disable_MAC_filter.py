@@ -31,7 +31,7 @@ def main():
     driver.get("http://192.168.0.1/html/wlanmacfilter.html") 
     # click dropdown 
     dropdown = driver.find_element_by_id('ssid_select_service').click()
-    # choose Deny
+    # choose Disable
     driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div[2]/div[2]/div[2]/div[1]/div/span[2]/select/option[1]").click()
     driver.find_element_by_id('apply').click() 
     time.sleep(2)
