@@ -46,7 +46,7 @@ def main():
         time.sleep(2)
 
         driver.quit()    
-        print ("Blacklisted: "+MAC_add)
+        print ("Blacklisted:  "+MAC_add)
         
     else:
         print("Not in time...Exiting!")
